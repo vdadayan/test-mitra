@@ -1,9 +1,15 @@
 import React from 'react';
+import {Container} from "react-bootstrap";
+import styles from '../styles/Header.module.css'
+import {Burger} from "./Burger";
 
 const Header = () => {
-    return (
-        <div>
 
+    return (
+        <div className={styles.header}>
+            <Container fluid="md">
+                <Burger/>
+            </Container>
         </div>
     );
 };
