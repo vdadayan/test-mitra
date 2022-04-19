@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit'
-import {actionGallery} from "../actions/actionGallery";
+export const GALLERY = 'GALLERY'
+export const FETCH_GALLERY = 'FETCH_GALLERY'
 
 const initialState = {
     gallery: [],
@@ -7,21 +7,22 @@ const initialState = {
     error: ''
 }
 
-const galleryReducer = createSlice({
-    name: 'galery',
-    initialState,
-    reducers: {},
-    extraReducers: {
-        [actionGallery.pending.type]: (state) => {
-            state.isLoading = true
-        },
-        [actionGallery.fulfilled.type]: (state, action) => {
-            state.gallery = action.payload
-            state.isLoading = false
-        }
+export const galleryReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case GALLERY :
+            return {
+                ...state,
+                isLoading: true,
+                gallery: action.payload
+            }
+        default :
+            return {...state, isLoading: false}
     }
-})
+}
 
-export default galleryReducer.reducer
+export const galleryAction = (payload) => ({type: GALLERY, payload})
+export const fetchGalleryAction = () => ({type: FETCH_GALLERY})
+
+export default galleryReducer
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container} from "react-bootstrap";
-import styles from '../styles/Header.module.css'
+import styles from '../styles/header.module.css'
 import {Burger} from "./Burger";
 
 const Header = () => {

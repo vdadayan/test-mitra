@@ -16,4 +16,17 @@ html, body {
   flex: 1 0 auto;
   position: relative;
 }
+.figure {
+  position: relative;
+}
+.cardTooltip {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.-open.cardTooltip {
+  display: block;
+}
 

@@ -1,3 +1,3 @@
-export const ABOUT = '/about'
-export const DETAIL = '/detail'
-export const GALERY = '/'
+export const ROUTE_ABOUT = '/about'
+export const ROUTE_DETAIL = '/detail'
+export const ROUTE_GALERY = '/'
