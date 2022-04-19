@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from "../styles/header.module.css";
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import {Link} from "react-router-dom";
-import {ROUTE_GALERY,ROUTE_ABOUT, ROUTE_DETAIL} from "./consts";
+import {ROUTE_GALLERY,ROUTE_ABOUT, ROUTE_DETAIL} from "./consts";
 
 export const Burger = () => {
     const [show, setShow] = useState(false)
@@ -20,7 +20,7 @@ export const Burger = () => {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <div className={styles.burgerTooltip}>
-                        <Link to={ROUTE_GALERY}>Галерея</Link>
+                        <Link to={ROUTE_GALLERY}>Галерея</Link>
                         <Link to={ROUTE_ABOUT}>О себе</Link>
                     </div>
                 </Offcanvas.Body>

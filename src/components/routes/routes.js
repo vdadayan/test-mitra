@@ -1,4 +1,4 @@
-import {ROUTE_GALERY,ROUTE_DETAIL,ROUTE_ABOUT} from "../consts";
+import {ROUTE_GALERY, ROUTE_DETAIL, ROUTE_ABOUT, ROUTE_GALLERY} from "../consts";
 import About from "../pages/About";
 import Detail from "../pages/Detail";
 import Gallery from "../pages/Gallery";
@@ -13,7 +13,7 @@ export const routes = [
         component: <Detail/>
     },
     {
-        path: ROUTE_GALERY,
+        path: ROUTE_GALLERY,
         component: <Gallery/>
     }
 ]

@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchDetailPhotoAction} from "../../store/reducers/detailPhotoReducer";
 import Loader from "../Loader";
 import CardImage from "../CardImage";
+import {ROUTE_GALLERY} from "../consts";
 
 const Detail = () => {
     const params = useParams()
@@ -15,6 +16,7 @@ const Detail = () => {
     if (!isLoading) return <Loader/>
     return (
         <div>
+            <Link to={ROUTE_GALLERY}>Назад</Link>
             {detailPhoto.map(detail =>
                 <CardImage key={detail.id} {...detail}/>
             )}
