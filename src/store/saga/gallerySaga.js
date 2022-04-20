@@ -1,11 +1,13 @@
 import {call, put, takeEvery} from 'redux-saga/effects'
 import {FETCH_GALLERY, galleryAction} from "../reducers/galleryReducer";
 import {API} from "../../api/api";
+import {delay} from "./index";
 
-export const fetchGallery = () => API.get('/photos?_limit=5')
+export const fetchGallery = (props) => API.get(`albums/${props.id}/photos?_limit=6`)
 
-function* galleryWorker() {
-    const data = yield call(fetchGallery)
+function* galleryWorker(props) {
+    yield delay(500)
+    const data = yield call(() => fetchGallery(props))
     const json = yield call(() => new Promise(res => res(data.data)))
     yield put(galleryAction(json))
 }

@@ -21,7 +21,7 @@ export const galleryReducer = (state = initialState, action) => {
 }
 
 export const galleryAction = (payload) => ({type: GALLERY, payload})
-export const fetchGalleryAction = () => ({type: FETCH_GALLERY})
+export const fetchGalleryAction = (id = 1) => ({type: FETCH_GALLERY, id})
 
 export default galleryReducer
 
