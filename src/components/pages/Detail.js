@@ -3,8 +3,8 @@ import {Link, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchDetailPhotoAction} from "../../store/reducers/detailPhotoReducer";
 import Loader from "../Loader";
-import CardImage from "../CardImage";
 import {ROUTE_GALLERY} from "../consts";
+import DetailCard from "../DetailCard";
 
 const Detail = () => {
     const params = useParams()
@@ -15,12 +15,14 @@ const Detail = () => {
     }, [])
     if (!isLoading) return <Loader/>
     return (
-        <div>
-            <Link to={ROUTE_GALLERY}>Назад</Link>
+        <>
+            <div>
+                <Link to={ROUTE_GALLERY}>Назад</Link>
+            </div>
             {detailPhoto.map(detail =>
-                <CardImage key={detail.id} {...detail}/>
+                <DetailCard detail={detail} key={detail.id}/>
             )}
-        </div>
+        </>
     );
 };
 

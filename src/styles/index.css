@@ -15,6 +15,7 @@ html, body {
 .main {
   flex: 1 0 auto;
   position: relative;
+  margin-top: 20px;
 }
 .figure {
   position: relative;
@@ -24,6 +25,15 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
+  text-decoration: none;
+  color: white;
+  background-color: royalblue;
+  border-radius: 7px;
+  padding: 5px 10px;
+}
+
+.form-select {
+  margin-bottom: 20px;
 }
 
 .-open.cardTooltip {

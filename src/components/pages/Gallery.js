@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchGalleryAction} from "../../store/reducers/galleryReducer";
 import Loader from "../Loader";
-import CardImage from "../CardImage";
+import CardItem from "../CardItem";
 import styles from '../../styles/gallery.module.css'
 import {Form} from "react-bootstrap";
 
@@ -19,19 +19,19 @@ const Gallery = () => {
     const categories = [
         {
             id: 1,
-            name: 'categories'
+            name: 'категория'
         },
         {
             id: 2,
-            name: 'categories'
+            name: 'категория'
         },
         {
             id: 3,
-            name: 'categories'
+            name: 'категория'
         },
         {
             id: 4,
-            name: 'categories'
+            name: 'категория'
         }
     ]
 
@@ -40,13 +40,13 @@ const Gallery = () => {
         <>
             <Form.Select onChange={(e) => loadPhotos(e)}>
                 {categories.map((select =>
-                        <option key={select.id} value={select.id}>{select.id}</option>
+                        <option key={select.id} value={select.id}>{select.name + select.id}</option>
                 ))}
 
             </Form.Select>
             <div className={styles.galleryContainer}>
                 {gallery.map(photo =>
-                    <CardImage {...photo} key={photo.id}/>
+                    <CardItem {...photo} key={photo.id}/>
                 )}
             </div>
         </>
